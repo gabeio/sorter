@@ -4,15 +4,10 @@ from subprocess import Popen, call
 
 lower = "abcdefghijklmnopqrstuvwxyz"
 caps = lower.upper()
-numbers = "0123456789"
 
 for x in lower:
-	Popen(['mkdir '+x], shell=True)
+	Popen(['mkdir '+x,], shell=True)
 	Popen(['mv '+x+'*.* ./'+x], shell=True)
 
-for x in caps:
-	Popen(['mv '+x+'*.* ./'+x.lower()], shell=True)
-
-for x in numbers:
-	Popen(['mkdir '+x], shell=True)
+for x in upper:
 	Popen(['mv '+x+'*.* ./'+x], shell=True)
