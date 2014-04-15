@@ -1,18 +1,18 @@
 #!/usr/bin/env python
 import subprocess
-from subprocess import Popen, call
+from subprocess import Popen
 
 lower = "abcdefghijklmnopqrstuvwxyz"
 caps = lower.upper()
 numbers = "0123456789"
 
 for x in lower:
-	Popen(['mkdir '+x], shell=True)
-	Popen(['mv '+x+'*.* ./'+x], shell=True)
+	Popen(['mkdir '+x], shell=True) # make alpha directories to be sorted into
+	Popen(['mv '+x+'*.* ./'+x], shell=True) # move a-z*.* ./a-z
 
 for x in caps:
-	Popen(['mv '+x+'*.* ./'+x.lower()], shell=True)
+	Popen(['mv '+x+'*.* ./'+x.lower()], shell=True) # move A-Z*.* ./a-z
 
 for x in numbers:
-	Popen(['mkdir '+x], shell=True)
-	Popen(['mv '+x+'*.* ./'+x], shell=True)
+	Popen(['mkdir '+x], shell=True) # make number directories to be sorted into
+	Popen(['mv '+x+'*.* ./'+x], shell=True) # move 0-9*.* ./0-9
