@@ -6,5 +6,8 @@ lower = "abcdefghijklmnopqrstuvwxyz"
 caps = lower.upper()
 
 for x in lower:
-	#print x
-	Popen(['mkdir '+x], shell=True)
+	Popen(['mkdir '+x,], shell=True)
+	Popen(['mv '+x+'*.* ./'+x], shell=True)
+
+for x in upper
+	Popen(['mv '+x+'*.* ./'+x], shell=True)
